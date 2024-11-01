@@ -1,0 +1,23 @@
+version: 1
+name: gtfndata-integration.playground.consistency_table_1
+type: table
+spec:
+    schema:   
+    - mode: NULLABLE
+      name: data_date
+      type: DATE
+      description: showing date information1
+    - mode: NULLABLE
+      name: customer_id
+      type: STRING
+      description: customer_id
+    - mode: NULLABLE
+      name: customer_name
+      type: STRING
+      description: the amount
+    partition:
+      field: data_date
+    cluster:
+      using:
+      - customer_id
+labels: {"test"}
